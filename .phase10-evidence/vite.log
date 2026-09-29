@@ -1,0 +1,40 @@
+
+> figma-make-app@1.0.0 dev
+> vite --host 127.0.0.1 --port 4173
+
+[33m(!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+  - `__dirname` (vite.config.ts:29:27). Use `import.meta.dirname` instead
+  - JSON import "./.figma/make/site.json" without import attributes (vite.config.ts:6:31). Add `with { type: 'json' }`
+Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.[39m
+
+  [32m[1mVITE[22m v8.3.0[39m  [2mready in [0m[1m1755[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4173[22m/[39m
+[2m5:25:36 a.m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [optimizer] scanning dependencies...
+[2m5:25:38 a.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "./syncEngine" from "src/lib/useSyncEngine.ts". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mC:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/src/lib/useSyncEngine.ts[39m:11:7
+[33m  1  |  import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+  2  |  ...eConflictOperation, retryOperation, subscribeOutbox } from "./syncEngine";
+     |                                                                 ^
+  3  |  import { checkOfflineStorageHealth, getSyncFreshness } from "./offlineStore";
+  4  |  import { getStorageHealth, subscribeStorageHealth } from "./durableStorage";[39m
+[2m5:25:38 a.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "./syncEngine" from "src/lib/useSyncEngine.ts". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mC:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/src/lib/useSyncEngine.ts[39m:11:7
+[33m  1  |  import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+  2  |  ...eConflictOperation, retryOperation, subscribeOutbox } from "./syncEngine";
+     |                                                                 ^
+  3  |  import { checkOfflineStorageHealth, getSyncFreshness } from "./offlineStore";
+  4  |  import { getStorageHealth, subscribeStorageHealth } from "./durableStorage";[39m
+[2m5:25:38 a.m.[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "./syncEngine" from "src/lib/useSyncEngine.ts". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36mC:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/src/lib/useSyncEngine.ts[39m:11:7
+[33m  1  |  import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+  2  |  ...eConflictOperation, retryOperation, subscribeOutbox } from "./syncEngine";
+     |                                                                 ^
+  3  |  import { checkOfflineStorageHealth, getSyncFreshness } from "./offlineStore";
+  4  |  import { getStorageHealth, subscribeStorageHealth } from "./durableStorage";[39m
+[2m5:25:40 a.m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.phase9-browser/index.html[22m
+[2m5:25:40 a.m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/App.tsx, /src/components/inventory/InventoryHome.tsx, /src/components/inventory/TransactionHistory.tsx[22m
+[2m5:25:40 a.m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2m.phase9-browser/index.html[22m

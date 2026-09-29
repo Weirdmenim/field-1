@@ -1,0 +1,25 @@
+
+> figma-make-app@1.0.0 phase9:db-test
+> bash scripts/phase9_db_test.sh
+
+Connecting to local database...
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase1_auth_rls.sql:3: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase1_auth_rls.sql ...................... ok
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase2_inventory_model.sql ............... ok
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase3_authoritative_documents.sql:3: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase3_authoritative_documents.sql ....... ok
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase4_atomic_document_commands.sql:3: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase4_atomic_document_commands.sql ...... ok
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase5_ledger_reversals.sql:3: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase5_ledger_reversals.sql .............. ok
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase6_offline_workflow_support.sql:2: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase6_offline_workflow_support.sql ...... ok
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase7_identifiers_scanning.sql:2: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase7_identifiers_scanning.sql .......... ok
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase8_production_hardening.sql:2: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase8_production_hardening.sql .......... ok
+psql:/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase9_stock_revision_preconditions.sql:2: NOTICE:  extension "pgtap" already exists, skipping
+/Users/User/Downloads/FieldOne_/FieldOne_Inventory_Phase10_Prepared/supabase/tests/phase9_stock_revision_preconditions.sql .. ok
+All tests successful.
+Files=9, Tests=187,  2 wallclock secs ( 0.10 usr  0.04 sys +  0.20 cusr  0.09 csys =  0.43 CPU)
+Result: PASS

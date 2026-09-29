@@ -1,0 +1,57 @@
+
+> figma-make-app@1.0.0 phase10:verify
+> node scripts/phase10_verify.mjs && node scripts/phase10_architecture_gap_audit.mjs
+
+PASS Phase 10 architecture audit script exists
+PASS Phase 10 release candidate runner exists
+PASS Phase 10 concurrent dispatch proof exists
+PASS Phase 10 deterministic failure injection proof exists
+PASS Phase 10 killed-client rollback proof exists
+PASS Phase 10 browser outbox proof exists
+PASS Phase 10 duplicate-bin DB proof exists
+PASS Phase 10 duplicate-bin browser proof exists
+PASS Phase 10 reconciliation SQL exists
+PASS Phase 10 CI workflow exists
+PASS Phase 10 npm verify script registered
+PASS Phase 10 release script registered
+PASS shell syntax scripts/phase10_release_candidate.sh
+PASS shell syntax scripts/phase10_db_setup.sh
+PASS shell syntax scripts/phase10_concurrent_dispatch.sh
+PASS shell syntax scripts/phase10_failure_injection.sh
+PASS shell syntax scripts/phase10_killed_client_rollback.sh
+PASS shell syntax scripts/phase10_duplicate_bin_db.sh
+PASS shell syntax scripts/phase10_browser_test.sh
+PASS shell syntax scripts/phase10_reconcile.sh
+PASS python syntax scripts/phase10_browser_outbox_runtime.py
+PASS python syntax scripts/phase10_browser_duplicate_bin.py
+
+Phase 10 release-runner preparation checks passed.
+PASS canonical matrix still has 186 rows - 186
+PASS all runtime proofs are verified and all findings are closed
+PASS client does not call retired generic post_inventory_operation
+PASS client does not directly write inventory_balances
+PASS client does not directly write inventory_movements
+PASS client does not directly write inventory_operations
+PASS production screens do not import legacy data.ts fixture exports
+PASS required Phase 10 asset scripts/phase10_runtime_setup.sql
+PASS required Phase 10 asset scripts/phase10_concurrent_dispatch.sh
+PASS required Phase 10 asset scripts/phase10_failure_injection.sh
+PASS required Phase 10 asset scripts/phase10_killed_client_rollback.sh
+PASS required Phase 10 asset scripts/phase10_browser_outbox_runtime.py
+PASS required Phase 10 asset scripts/phase10_browser_duplicate_bin.py
+PASS required Phase 10 asset scripts/phase10_duplicate_bin_db.sh
+PASS required Phase 10 asset scripts/phase10_release_candidate.sh
+PASS required Phase 10 asset scripts/phase10_release_reconciliation.sql
+PASS required Phase 10 asset docs/remediation/PHASE10_HARNESS_AUDIT.md
+PASS required Phase 10 asset docs/remediation/PHASE10_MIGRATION_CHECKLIST.md
+PASS required Phase 10 asset docs/remediation/PHASE10_RECONCILIATION_CHECKLIST.md
+PASS required Phase 10 asset docs/remediation/PHASE10_RELEASE_CHECKLIST.md
+PASS required Phase 10 asset .github/workflows/phase10-release-candidate.yml
+PASS F-147 harness asserts one accepted and one revision conflict
+PASS F-149 harness covers deterministic second-line rollback
+PASS F-149 harness covers killed client plus same-id retry
+PASS F-153 harness uses four contexts and exact-once RPC assertion
+PASS F-154 harness closes and reopens persistent profile
+PASS F-157 browser harness uses actual app exact-manual flow and both bins
+
+Phase 10 architecture gap audit passed: no untracked architectural finding is present outside the five explicit runtime-proof gates.

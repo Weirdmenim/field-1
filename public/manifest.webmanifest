@@ -1,0 +1,13 @@
+{
+  "name": "FieldOne Inventory",
+  "short_name": "FieldOne",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f8f9fa",
+  "theme_color": "#444cfa",
+  "description": "Offline-capable warehouse inventory operations",
+  "icons": [
+    { "src": "/fieldone-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

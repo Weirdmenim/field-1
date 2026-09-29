@@ -1,0 +1,3 @@
+f1000000-0000-4000-8000-000000000099
+authenticated
+{"code": "P0001", "message": "PHASE10_INJECTED_SECOND_LINE_FAILURE", "outcome": "transient_error", "success": false, "client_command_id": "f1490000-0000-4000-8000-000000000001", "server_command_id": "7279cd85-c757-4e2f-b3d4-7fabd074703e"}

@@ -1,0 +1,43 @@
+F-149 Retrying the request after failure...
+PASS F-149 post-failure same-id retry: stable command safely completed after rollback
+NOTICE:  truncate cascades to table "inventory_sales_order_lines"
+NOTICE:  truncate cascades to table "inventory_backorders"
+NOTICE:  truncate cascades to table "inventory_movements"
+NOTICE:  truncate cascades to table "inventory_reservations"
+NOTICE:  truncate cascades to table "inventory_ledger_commands"
+NOTICE:  truncate cascades to table "inventory_movements"
+NOTICE:  truncate cascades to table "inventory_document_commands"
+NOTICE:  truncate cascades to table "inventory_ledger_commands"
+NOTICE:  truncate cascades to table "inventory_transfer_receipt_dispositions"
+BEGIN
+psql:scripts/phase10_runtime_setup.sql:4: NOTICE:  schema "phase10_test" already exists, skipping
+CREATE SCHEMA
+psql:scripts/phase10_runtime_setup.sql:10: NOTICE:  relation "snapshots" already exists, skipping
+CREATE TABLE
+TRUNCATE TABLE
+GRANT
+GRANT
+INSERT 0 0
+INSERT 0 0
+INSERT 0 1
+INSERT 0 3
+INSERT 0 9
+INSERT 0 6
+INSERT 0 6
+INSERT 0 5
+INSERT 0 7
+              set_config              
+--------------------------------------
+ f1000000-0000-4000-8000-000000000099
+(1 row)
+
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+INSERT 0 4
+COMMIT
+Running F-149: Failure injection...
+NOTICE:  trigger "phase10_fail_second_movement" for relation "inventory_movements" does not exist, skipping
+PASS F-149 injected mid-batch failure: first-line balance/ledger/document work rolled back atomically

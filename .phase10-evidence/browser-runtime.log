@@ -1,0 +1,5 @@
+QUEUE LENGTH: 40
+FIRST ITEM: {'schemaVersion': 2, 'id': '00000001-1111-4111-8111-000000000001', 'owner': {'authUserId': 'aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa', 'companyId': 'bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb', 'locationId': 'cccccccc-cccc-4ccc-8ccc-cccccccccccc'}, 'kind': 'unknown_scan_report', 'ref': 'P10-00', 'label': 'Unknown scan', 'documentId': None, 'createdAt': '2026-09-25T04:25:47.313Z', 'clientRecordedAt': '2026-09-23T08:00:00.000Z', 'state': 'confirmed', 'payload': {'rawCode': 'UNKNOWN-00', 'context': 'browse'}, 'dependencyIds': [], 'attemptCount': 1, 'nextAttemptAt': None, 'lastError': None, 'leaseOwner': None, 'leaseExpiresAt': None, 'confirmedAt': '2026-09-25T04:25:47.544Z', 'serverResult': {'ok': True, 'id': '00000001-1111-4111-8111-000000000001'}}
+PASS F-153 real Chromium multi-context race: 40 commands preserved and each executed exactly once across four tabs
+PASS F-154 real Chromium persistent-profile restart: queued plus expired-syncing commands recovered with original stable ids and executed once
+PASS Phase 10 outbox browser proof: no uncaught page errors or console.error messages

@@ -1,0 +1,5 @@
+f1000000-0000-4000-8000-000000000099
+authenticated
+
+{"code": "STOCK_REVISION_CONFLICT", "lines": [{"binId": "f1000000-0000-4000-8000-000000000101", "current": {"physicalRevision": 2, "binReservationRevision": 0, "locationReservationRevision": 0}, "expected": {"binId": "f1000000-0000-4000-8000-000000000101", "productId": "44444444-4444-4444-4444-444444444401", "locationId": "33333333-3333-3333-3333-333333333331", "inventoryStatus": "AVAILABLE", "physicalRevision": 1, "binReservationRevision": 0, "locationReservationRevision": 0}, "productId": "44444444-4444-4444-4444-444444444401", "locationId": "33333333-3333-3333-3333-333333333331", "inventoryStatus": "AVAILABLE"}], "message": "Authoritative stock/reservation revision changed since this command was created", "outcome": "conflict", "success": false, "document_id": "f1100000-0000-4000-8000-000000000002", "client_command_id": "f1470000-0000-4000-8000-000000000002"}
+t

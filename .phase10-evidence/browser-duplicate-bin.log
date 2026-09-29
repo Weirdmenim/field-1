@@ -1,0 +1,2 @@
+PASS F-157 real browser workflow: exact duplicate SKU required line/bin disambiguation and selected bin B flowed into Dispatch
+PASS F-157 browser proof: no uncaught page errors or console.error messages

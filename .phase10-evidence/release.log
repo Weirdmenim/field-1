@@ -1,0 +1,13 @@
+=== Phase 10 release-candidate verification ===
+commit=5122f14f16377e802e7cd1a17919ae23ebbabd46
+dirty_worktree=0
+started_at=2026-09-25T04:22:41Z
+node=v22.22.3
+npm=10.9.8
+docker=Docker version 27.4.0, build bde2b89
+supabase=2.117.0
+psql=psql (PostgreSQL) 17.5
+python=Python 3.10.1
+playwright=1.63.0
+
+PASS Phase 10 release-candidate verification: all five runtime proofs and mandatory gates are green

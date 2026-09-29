@@ -1,0 +1,28 @@
+BEGIN
+CREATE SCHEMA
+CREATE TABLE
+TRUNCATE TABLE
+GRANT
+GRANT
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 3
+INSERT 0 9
+INSERT 0 6
+INSERT 0 6
+INSERT 0 5
+INSERT 0 7
+              set_config              
+--------------------------------------
+ f1000000-0000-4000-8000-000000000099
+(1 row)
+
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+INSERT 0 4
+COMMIT
+PASS Phase 10 PostgreSQL runtime fixture setup

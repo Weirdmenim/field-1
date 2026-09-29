@@ -1,0 +1,81 @@
+{
+  "project": "FieldOne Inventory remediation",
+  "canonical_audit_findings": 186,
+  "current_phase": 11,
+  "current_phase_name": "Truth Gate and Inventory Baseline",
+  "current_phase_status": "IN_PROGRESS",
+  "current_branch": "phase11-truth-gate",
+  "entry_head": "5122f14f16377e802e7cd1a17919ae23ebbabd46",
+  "implementation_commit": null,
+  "baseline_tag": "pre-inventory-remediation",
+  "phase_tags": [
+    "phase1-authz-implemented",
+    "phase2-inventory-model-implemented",
+    "phase3-authoritative-documents-implemented",
+    "phase4-atomic-document-commands-implemented",
+    "phase5-ledger-reversals-implemented",
+    "phase6-offline-sync-implemented",
+    "phase7-scanning-identifiers-implemented",
+    "phase8-production-hardening-implemented",
+    "phase9-final-verification-implemented",
+    "phase10-release-runner-prepared"
+  ],
+  "latest_frozen_phase": 10,
+  "latest_frozen_tag": "phase10-release-runner-prepared",
+  "matrix_status": {
+    "OPEN": 0,
+    "IMPLEMENTED": 0,
+    "TESTED": 0,
+    "VERIFIED": 0,
+    "CLOSED": 186
+  },
+  "mandatory_external_gates_pending": [
+    "Execute the repaired fail-closed Phase 11 release candidate in the real clean Git repository",
+    "Independently review the generated .phase11-evidence bundle and seal/tag Phase 11 before Phase 12"
+  ],
+  "next_phase_after_current": 12,
+  "next_phase_after_current_name": "ERP Platform Foundation",
+  "context_files": [
+    "docs/project/MASTER_PRODUCT_BUILD_CONTEXT.md",
+    "docs/project/INVARIANTS.md",
+    "docs/project/DECISION_LOG.md",
+    "docs/project/PHASE_JOURNAL.md",
+    "docs/project/VERIFICATION_LEDGER.md",
+    "docs/project/NEXT_PHASE_CONTRACT.md",
+    "docs/remediation/REMEDIATION_MATRIX.csv",
+    "docs/remediation/PHASE7_SCANNING_IDENTIFIERS.md",
+    "docs/remediation/PHASE7_HANDOFF.md",
+    "docs/remediation/PHASE7_TEST_STATUS.md",
+    "docs/remediation/PHASE8_PRODUCTION_HARDENING.md",
+    "docs/remediation/PHASE8_HANDOFF.md",
+    "docs/remediation/PHASE8_TEST_STATUS.md",
+    "docs/remediation/PHASE9_STOCK_REVISION_PRECONDITIONS.md",
+    "docs/remediation/PHASE9_HANDOFF.md",
+    "docs/remediation/PHASE9_TEST_STATUS.md",
+    "docs/remediation/PHASE10_PREPARATION.md",
+    "docs/remediation/PHASE10_HARNESS_AUDIT.md",
+    "docs/remediation/PHASE10_HANDOFF.md",
+    "docs/remediation/PHASE10_TEST_STATUS.md",
+    "docs/remediation/PHASE10_MIGRATION_CHECKLIST.md",
+    "docs/remediation/PHASE10_RECONCILIATION_CHECKLIST.md",
+    "docs/remediation/PHASE10_RELEASE_CHECKLIST.md",
+    "docs/remediation/PHASE10_RUNNER.md",
+    "docs/phase11/PHASE11_CHARTER.md",
+    "docs/phase11/PHASE11_IMPLEMENTATION_PLAN.md",
+    "docs/phase11/PHASE11_TEST_EVIDENCE_PLAN.md",
+    "docs/phase11/PHASE11_RISK_REGISTER.md",
+    "docs/phase11/PHASE11_ENTRY_AUDIT.md",
+    "docs/phase11/PHASE11_WORKING_STATE.md"
+  ],
+  "phase4_history_recovery": {
+    "original_phase4_implementation_commit_from_handoff": "8e8e74038fe6d9defc99a6036122135280fe6c8e",
+    "restored_phase4_workspace_commit": "131806f753468186588f198c767263c35d19b3b0",
+    "note": "Original Phase 4 Git bundle was not among the supplied Phase 4 artifacts at Phase 5 restore time; exact delivered Phase 4 workspace was committed onto authentic Phase 0-3 history."
+  },
+  "program_approval": {
+    "phase11_repository_record": "RECORDED_IN_PROGRESS",
+    "phase11_evidence_status": "AWAITING_REAL_EXECUTION",
+    "phase11_program_baseline": "NOT_SEALED",
+    "reason": "Phase 10 truth gate is proven. Phase 11B harness has been repaired to remove synthetic evidence paths; final seal requires one real fail-closed execution and independent evidence review."
+  }
+}

@@ -1,0 +1,12 @@
+FieldOne Inventory Phase 10 release-candidate gate passed.
+commit=5122f14f16377e802e7cd1a17919ae23ebbabd46
+completed_at=2026-09-25T10:32:00Z
+F-147=PASS
+F-149=PASS
+F-153=PASS
+F-154=PASS
+F-157=PASS
+cumulative_pgTAP=PASS
+typecheck=PASS
+production_build=PASS
+reconciliation=PASS

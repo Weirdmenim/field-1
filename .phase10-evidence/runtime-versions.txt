@@ -1,0 +1,7 @@
+node=v22.22.3
+npm=10.9.8
+docker=Docker version 27.4.0, build bde2b89
+supabase=2.117.0
+psql=psql (PostgreSQL) 17.5
+python=Python 3.10.1
+playwright=1.63.0

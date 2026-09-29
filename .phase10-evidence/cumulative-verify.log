@@ -1,0 +1,711 @@
+
+> figma-make-app@1.0.0 verify
+> npm run context:verify && npm run phase0:verify && npm run phase1:verify && npm run phase2:verify && npm run phase3:verify && npm run phase4:verify && npm run phase5:verify && npm run phase6:verify && npm run phase7:verify && npm run phase8:verify && npm run phase9:verify && npm run phase10:verify && npm run syntax:check
+
+
+> figma-make-app@1.0.0 context:verify
+> node scripts/project_context_verify.mjs
+
+PASS context file docs/project/PROJECT_STATE.json
+PASS context file docs/project/CONTEXT_SYSTEM.md
+PASS context file docs/project/INVARIANTS.md
+PASS context file docs/project/DECISION_LOG.md
+PASS context file docs/project/PHASE_JOURNAL.md
+PASS context file docs/project/VERIFICATION_LEDGER.md
+PASS context file docs/project/NEXT_PHASE_CONTRACT.md
+PASS context file docs/remediation/REMEDIATION_MATRIX.csv
+PASS state context file docs/project/INVARIANTS.md
+PASS state context file docs/project/DECISION_LOG.md
+PASS state context file docs/project/PHASE_JOURNAL.md
+PASS state context file docs/project/VERIFICATION_LEDGER.md
+PASS state context file docs/project/NEXT_PHASE_CONTRACT.md
+PASS state context file docs/remediation/REMEDIATION_MATRIX.csv
+PASS state context file docs/remediation/PHASE7_SCANNING_IDENTIFIERS.md
+PASS state context file docs/remediation/PHASE7_HANDOFF.md
+PASS state context file docs/remediation/PHASE7_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE8_PRODUCTION_HARDENING.md
+PASS state context file docs/remediation/PHASE8_HANDOFF.md
+PASS state context file docs/remediation/PHASE8_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE9_STOCK_REVISION_PRECONDITIONS.md
+PASS state context file docs/remediation/PHASE9_HANDOFF.md
+PASS state context file docs/remediation/PHASE9_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE10_PREPARATION.md
+PASS state context file docs/remediation/PHASE10_HARNESS_AUDIT.md
+PASS state context file docs/remediation/PHASE10_HANDOFF.md
+PASS state context file docs/remediation/PHASE10_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE10_MIGRATION_CHECKLIST.md
+PASS state context file docs/remediation/PHASE10_RECONCILIATION_CHECKLIST.md
+PASS state context file docs/remediation/PHASE10_RELEASE_CHECKLIST.md
+PASS state context file docs/remediation/PHASE10_RUNNER.md
+PASS canonical finding count remains 186
+PASS current phase is recorded
+PASS entry head recorded
+PASS implementation commit recorded
+PASS latest frozen phase is not ahead of current phase
+PASS matrix still contains 186 findings - 186 rows
+PASS project-state matrix counts sum to 186 - 186
+PASS Phase 1 trust boundary persisted
+PASS Phase 2 ATP invariant persisted
+PASS unsafe generic COUNT remains fail closed
+PASS Phase 3 authoritative-document invariant persisted
+PASS Phase 3 no-stock-write invariant persisted
+PASS Phase 3 handoff exists
+PASS Phase 4 stable command identity invariant persisted
+PASS Phase 4 authoritative delta invariant persisted
+PASS Phase 4 generic document posting remains disabled
+PASS Phase 4 handoff exists
+PASS Phase 4 migration exists
+PASS Phase 5 append-only ledger invariant persisted
+PASS Phase 5 document-linked reversal fail-closed invariant persisted
+PASS Phase 5 handoff exists
+PASS Phase 5 migration exists
+PASS Phase 5 admin repair runbook exists
+PASS Phase 6 record-per-command outbox invariant persisted
+PASS Phase 6 owner quarantine invariant persisted
+PASS Phase 6 stable local command identity invariant persisted
+PASS Phase 6 cross-context coordination invariant persisted
+PASS Phase 6 authoritative workflow cutover invariant persisted
+PASS Phase 6 handoff exists
+PASS Phase 6 migration exists
+PASS Phase 6 offline-store implementation exists
+PASS Phase 7 exact transactional identifier invariant persisted
+PASS Phase 7 identifier namespace invariant persisted
+PASS Phase 7 scanner input-only invariant persisted
+PASS Phase 7 durable unknown-scan invariant persisted
+PASS Phase 7 unresolved receipt exception invariant persisted
+PASS Phase 7 handoff exists
+PASS Phase 7 migration exists
+PASS Phase 7 scanner implementation exists
+PASS Phase 8 active reachability invariant persisted
+PASS Phase 8 durable storage invariant persisted
+PASS Phase 8 cold-offline identity invariant persisted
+PASS Phase 8 receipt disposition invariant persisted
+PASS Phase 8 legacy generic posting remains retired
+PASS Phase 8 handoff exists
+PASS Phase 8 production-hardening migration exists
+PASS Phase 8 service worker exists
+PASS Phase 9 explicit stock revision invariant persisted
+PASS Phase 9 immutable precondition identity invariant persisted
+PASS Phase 9 shared position-lock invariant persisted
+PASS Phase 9 stale stock conflict invariant persisted
+PASS Phase 9 handoff exists
+PASS Phase 9 migration exists
+PASS Phase 10 runtime evidence discipline persisted
+PASS Phase 10 all-or-nothing release gate invariant persisted
+PASS Phase 10 browser proof authority invariant persisted
+PASS Phase 10 handoff exists
+PASS Phase 10 runner exists
+PASS Phase 10 CI workflow exists
+PASS baseline tag retained
+PASS phase tag retained phase1-authz-implemented
+PASS phase tag retained phase2-inventory-model-implemented
+PASS phase tag retained phase3-authoritative-documents-implemented
+PASS phase tag retained phase4-atomic-document-commands-implemented
+PASS phase tag retained phase5-ledger-reversals-implemented
+PASS phase tag retained phase6-offline-sync-implemented
+PASS phase tag retained phase7-scanning-identifiers-implemented
+PASS phase tag retained phase8-production-hardening-implemented
+PASS phase tag retained phase9-final-verification-implemented
+PASS phase tag retained phase10-release-runner-prepared
+
+Project context continuity checks passed.
+
+> figma-make-app@1.0.0 phase0:verify
+> node scripts/phase0_verify.mjs
+
+PASS npm lock matches dependencies
+PASS npm lock matches devDependencies
+PASS canonical package manager is npm - npm@10.9.2
+PASS stale pnpm lock removed
+PASS Figma site configuration exists
+PASS remediation matrix has 186 findings - 186 findings
+PASS immutable baseline tag exists - 5122f14f16377e802e7cd1a17919ae23ebbabd46
+
+Phase 0 control checks passed.
+
+> figma-make-app@1.0.0 phase1:verify
+> node scripts/phase1_verify.mjs
+
+PASS Phase 1 migration exists
+PASS profiles bind to auth.users
+PASS company memberships exist
+PASS warehouse memberships exist
+PASS tenant-safe balance location FK
+PASS tenant-safe balance product FK
+PASS tenant-safe movement actor FK
+PASS actor required on new operations
+PASS actor required on new movements
+PASS current profile derives from auth.uid
+PASS warehouse permission helper exists
+PASS operational context RPC exists
+PASS products RLS enabled
+PASS balances RLS enabled
+PASS movements RLS enabled
+PASS application table privileges revoked before SELECT-only grant
+PASS low-level mutation execute revoked
+PASS authorized wrapper requires auth
+PASS authorized wrapper derives actor
+PASS authorized wrapper derives company from location
+PASS inactive locations rejected
+PASS direct-sales flag enforced
+PASS warehouse permission enforced
+PASS JSON wrapper only granted to authenticated
+PASS production source does not contain demo authorization ID 11111111
+PASS production source does not contain demo authorization ID 22222222
+PASS production source does not contain demo authorization ID 33333333
+PASS frontend listens to Supabase auth state
+PASS frontend loads server operational context
+PASS context selection is validated against memberships
+PASS logout clears tenant query cache
+PASS stale auth-context requests are invalidated on account switch
+PASS application is auth gated
+PASS operational context controls are available on mobile
+PASS items query key includes company and warehouse
+PASS item query key includes company and warehouse
+PASS product reads are company scoped
+PASS balance reads are warehouse scoped
+PASS queue commands carry owner context
+PASS queue processor checks owner context
+PASS legacy demo queue seeding removed
+PASS sync payload does not trust company_id
+PASS sync payload does not trust user_id
+PASS unknown product no longer maps to LED demo ID
+PASS seed creates company memberships before locations
+PASS seed creates warehouse memberships
+
+Phase 1 static security checks passed.
+
+> figma-make-app@1.0.0 phase2:verify
+> node scripts/phase2_verify.mjs
+
+PASS Phase 2 migration exists
+PASS authoritative inventory bins exist
+PASS one system default bin per location
+PASS balance key includes bin
+PASS bin FK is tenant/location safe
+PASS first-class reservations exist
+PASS reservation provenance exists
+PASS legacy reserved balance quantity is migrated
+PASS legacy reserved balance column is forced to zero
+PASS in-transit custody table exists
+PASS transit source and destination must differ
+PASS products require base UOM
+PASS products require default sale UOM
+PASS normalized unit code uniqueness
+PASS UOM quantity scale enforced
+PASS UOM quantity step enforced
+PASS UOM step precision matches declared scale
+PASS UOM codes cannot be blank
+PASS product base-default UOM configuration is validated
+PASS configured base/default units cannot be deactivated
+PASS UOM conversion function exists
+PASS zero/negative entered quantities rejected
+PASS movement entered unit is required
+PASS movement source/destination bin shape constrained
+PASS movement source/destination statuses required when locations exist
+PASS status changes preserve bin identity
+PASS undefined transfer reversal semantics fail closed
+PASS movement semantic shape constrained
+PASS negative inventory policy guard exists
+PASS source balance is materialized then locked before deduction
+PASS negative non-AVAILABLE status cannot be stored
+PASS canonical location position view exists
+PASS canonical ATP subtracts reservations from AVAILABLE physical
+PASS in-transit remains separate in canonical view
+PASS bin-aware internal primitive exists
+PASS internal primitive revalidates active source/destination bins
+PASS bin position view includes reservation-only and transit-only keys
+PASS bin-aware primitive is not app-callable
+PASS legacy low-level primitive is disabled
+PASS dispatch maps to SALE
+PASS COUNT stock mutation fails closed
+PASS generic adjustment fails closed
+PASS explicit adjustment in supported
+PASS explicit adjustment out supported
+PASS damage status transition supported
+PASS status change supported
+PASS new canonical tables have RLS
+PASS new canonical tables are SELECT-only to app role
+PASS inventory reads canonical location position view
+PASS bin detail reads canonical bin position view
+PASS bin detail exposes inbound transit separately
+PASS item movement detail reads real movement ledger
+PASS item detail no longer mixes fixture related work with live stock
+PASS inventory query no longer returns demo item list
+PASS inventory query no longer uses itemById fallback
+PASS queries expose base UOM metadata
+PASS explicit live lists fail closed to zero-stock unknown item
+PASS PVC fixture demonstrates fractional UOM capability
+PASS quantity input uses decimal keyboard
+PASS quantity input respects configured scale
+PASS quantity input respects configured step
+PASS sync quantity preserves fractional numeric values
+PASS sync payload carries authoritative bin identity
+PASS sync payload carries authoritative UOM id
+PASS sync payload no longer exposes generic ADJUSTMENT
+PASS workflow quantities use canonical UOM-aware authoritative commands
+PASS workflow commands carry authoritative bin identity
+PASS workflow quantity controls receive UOM step/scale
+PASS seed is transactional for deferred product/UOM FKs
+PASS seed provides authoritative operational bins
+PASS seed provides base UOMs
+PASS seed reservations are first class
+PASS seed transit is first class
+PASS LED physical stock seed is 40 AVAILABLE + 2 DAMAGED
+PASS seed no longer embeds reservations in balances
+PASS Phase 2 preflight exists
+PASS Phase 2 DB tests exist
+
+Phase 2 static canonical-inventory checks passed.
+
+> figma-make-app@1.0.0 phase3:verify
+> node scripts/phase3_verify.mjs
+
+PASS Phase 3 migration exists
+PASS transfer documents exist
+PASS transfer lines exist
+PASS sales orders exist
+PASS sales-order lines exist
+PASS count sessions exist
+PASS count lines exist
+PASS count observations exist
+PASS count approvals exist
+PASS backorders exist
+PASS transfer stable tenant line identity
+PASS sales-order stable tenant line identity
+PASS count stable tenant line identity
+PASS document revisions exist
+PASS transfer remaining quantity is server derived
+PASS sales remaining quantity is server derived
+PASS sales over-pick constrained
+PASS captured transfer quantity cannot post beyond capture
+PASS count observation stores expected snapshot
+PASS count observation stores client physical action time
+PASS count approval decision is durable
+PASS reservation has authoritative sales-order line link
+PASS transit has authoritative transfer-line link
+PASS movements have authoritative line link columns
+PASS record transfer capture command exists
+PASS captured transfer lines are immutable
+PASS record sales pick command exists
+PASS server rejects picked quantity above request
+PASS backorder command exists
+PASS backorder cannot exceed request
+PASS count observation command exists
+PASS zero count is allowed explicitly
+PASS variance requires structured reason
+PASS count approval command exists
+PASS count approval permission enforced
+PASS optimistic document revision conflict enforced
+PASS count session revision conflict enforced
+PASS authoritative work list RPC exists
+PASS transfer read RPC exists
+PASS sales-order read RPC exists
+PASS count read RPC exists
+PASS blind count expected is hidden until observation
+PASS document tables have RLS
+PASS document base tables are not directly exposed
+PASS capture commands granted only to authenticated
+PASS Phase 3 document capture does not mutate balances
+PASS Phase 3 document capture does not append movement rows
+PASS client reads authoritative work through RPC
+PASS client reads authoritative transfer through RPC
+PASS client reads authoritative sales order through RPC
+PASS client reads authoritative count through RPC
+PASS document RPC responses are runtime parsed
+PASS document query keys include tenant/location context
+PASS context switch clears warehouse-work cache
+PASS context switch clears transfer-document cache
+PASS context switch clears sales-order-document cache
+PASS context switch clears count-session-document cache
+PASS seed contains authoritative transfers
+PASS seed contains authoritative sales orders
+PASS seed contains authoritative count sessions
+PASS count seed derives expected quantity from balances
+PASS seed links reservations to order lines
+PASS seed links transit to transfer lines
+PASS Phase 3 preflight exists
+PASS Phase 3 DB tests exist
+PASS Phase 3 handoff target contract exists
+
+Phase 3 static authoritative-document checks passed.
+
+> figma-make-app@1.0.0 phase4:verify
+> node scripts/phase4_verify.mjs
+
+PASS Phase 4 migration exists
+PASS document command ledger exists
+PASS UUID idempotency key unique per company
+PASS server canonical fingerprint exists
+PASS fingerprint is server-computed
+PASS atomic first-submission insert uses ON CONFLICT
+PASS same key different command is detected
+PASS transient result can retry same command identity
+PASS typed accepted duplicate conflict validation authorization transient contract
+PASS movement links to document command
+PASS transfer tracks shipped quantity separately
+PASS transfer ship command exists
+PASS transfer receive command exists
+PASS sales dispatch command exists
+PASS count finalize command exists
+PASS transfer ship derives server delta
+PASS transfer receive derives server delta
+PASS sales dispatch derives server delta
+PASS fresh command cannot reapply transfer quantity
+PASS sales finalization requires full accounting
+PASS dispatch protects other reservations
+PASS location-level reservations also protect stock
+PASS idempotency fingerprint binds client physical timestamp
+PASS sales reservation bin provenance fails closed
+PASS command movement revalidates active source and destination bins
+PASS dispatch fulfills own reservation
+PASS dispatch releases reservation remainder
+PASS transfer ship creates authoritative transit
+PASS transfer receipt consumes linked transit only
+PASS transfer receipt rejects transit over-receipt
+PASS unsafe condition exception does not become AVAILABLE stock
+PASS count finalization requires resolved lines
+PASS count finalization requires approved variance
+PASS count finalization revalidates physical snapshot
+PASS count movement uses explicit variance in
+PASS count movement uses explicit variance out
+PASS client physical timestamp reaches movement
+PASS movement carries authoritative line provenance
+PASS generic document stock posting disabled
+PASS document command base table is select-only
+PASS internal Phase 4 helpers are not app callable
+PASS command status lookup exists
+PASS command audit RLS is actor scoped
+PASS command status lookup is company scoped
+PASS client parses typed command outcomes
+PASS client requires caller-provided stable command id
+PASS client has transfer ship command
+PASS client has transfer receive command
+PASS client has sales dispatch command
+PASS client has count finalize command
+PASS transfer document exposes shipped progress
+PASS legacy queue fails closed for receipt dispatch count
+PASS Phase 4 preflight exists
+PASS Phase 4 preflight checks reservation/bin provenance
+PASS Phase 4 DB tests exist
+PASS Phase 4 pgTAP plan covers 36 assertions
+PASS Phase 4 pgTAP checks immutable command timestamp
+PASS Phase 4 pgTAP checks contradictory reservation bin
+PASS Phase 4 handoff target contract exists
+
+Phase 4 static atomic-command checks passed.
+
+> figma-make-app@1.0.0 phase5:verify
+> node scripts/phase5_verify.mjs
+
+PASS Phase 5 migration exists
+PASS ledger correction command table exists
+PASS ledger command uses UUID client identity
+PASS ledger command id unique per company
+PASS source movement relation is tenant safe
+PASS reversal original relation is tenant and product safe
+PASS self reversal is forbidden
+PASS movement history has append-only trigger
+PASS append-only guard fails explicit update delete
+PASS reversal row requires ledger command provenance
+PASS reversal of reversal fails closed
+PASS document-linked generic reversal fails closed
+PASS reversal type is derived from original type
+PASS reversal shape exactly inverts original
+PASS downstream activity eligibility rule exists
+PASS downstream activity returns conflict
+PASS aggregate reversed quantity is calculated
+PASS over reversal is rejected
+PASS original row is locked before reversal
+PASS reversal source balance is locked
+PASS active reservations are locked
+PASS reversal cannot consume reserved inventory
+PASS inactive source and destination positions fail closed
+PASS reversal command fingerprint is server computed
+PASS fingerprint binds physical timestamp
+PASS first reversal command acquisition is atomic
+PASS same key different reversal content fails closed
+PASS transient reversal outcome can retry same command identity
+PASS matching in-flight command reports processing
+PASS accepted reversal appends new movement
+PASS accepted reversal never updates historical movement row
+PASS reversal operation carries authenticated actor
+PASS reversal movement links original and ledger command
+PASS full and partial state are explicit
+PASS typed reversal result lookup exists
+PASS reversal eligibility API exists
+PASS ledger command audit RLS is actor scoped
+PASS authenticated direct movement insert update delete truncate revoked
+PASS service role direct movement write revoked when present
+PASS internal reversal helpers are not app callable
+PASS public reversal command only granted authenticated
+PASS client runtime parses reversal state
+PASS client runtime parses reversal command result
+PASS client requires stable caller-provided command id
+PASS client requires explicit physical timestamp
+PASS client requires explicit reason
+PASS Phase 5 preflight exists
+PASS Phase 5 DB tests exist
+PASS Phase 5 pgTAP plan matches authored assertions - 28 planned / 28 found
+PASS pgTAP covers partial reversal leaves authoritative remainder
+PASS pgTAP covers second partial reversal can complete the original quantity
+PASS pgTAP covers over reversal is rejected
+PASS pgTAP covers reversal of a reversal is rejected
+PASS pgTAP covers cross-tenant reversal is denied
+PASS pgTAP covers wrong-product reversal row is rejected
+PASS pgTAP covers downstream activity makes original ineligible
+PASS pgTAP covers document-linked movement requires document correction
+PASS pgTAP covers append-only trigger rejects UPDATE
+PASS pgTAP covers append-only trigger rejects DELETE
+PASS Phase 5 handoff/next phase contract exists
+
+Phase 5 static ledger/reversal checks passed.
+
+> figma-make-app@1.0.0 phase6:verify
+> node scripts/phase6_verify.mjs
+
+PASS Phase 6 migration exists
+PASS outbox is record per command
+PASS whole-array queue write path removed
+PASS outbox schema is versioned
+PASS persisted outbox records are runtime validated
+PASS malformed V2 outbox records are quarantined, not executed
+PASS outbox owner includes user company warehouse
+PASS legacy whole-array records are quarantined
+PASS legacy queue is never auto submitted
+PASS stable outbox id is caller supplied
+PASS causal dependencies are durable
+PASS attempt count persisted
+PASS next attempt persisted
+PASS typed last error persisted
+PASS processing lease persisted
+PASS stale syncing records recover after lease expiry
+PASS cross tab coordination uses Web Locks
+PASS durable fallback owner lease exists
+PASS fallback lease acquisition is atomic in IndexedDB transaction
+PASS fallback lease is renewed while processing
+PASS BroadcastChannel notifies other contexts
+PASS retry uses exponential backoff and jitter
+PASS conflict cannot blind retry
+PASS accept server preserves cancelled command record
+PASS server command result reconciles stable id
+PASS ambiguous line capture reconciles against authoritative document
+PASS generic document stock posting remains absent from outbox kinds
+PASS last confirmed timestamp is persisted
+PASS sync starts on cold startup after durable storage check and reachability probe
+PASS sync hook no longer exposes manual online toggle
+PASS sync hook listens cross context
+PASS authoritative RPCs use abortable timeouts
+PASS legacy adjustment RPC is retired or uses abortable timeout
+PASS confirmed sync invalidates movement and bin caches
+PASS authoritative query snapshots persist for offline reload
+PASS workflow drafts persist separately
+PASS draft server revision can advance without discarding local state
+PASS Home uses authoritative work
+PASS Work uses authoritative work
+PASS Receive uses authoritative transfer document
+PASS Dispatch uses authoritative sales order
+PASS Dispatch creates durable backorder command
+PASS Count uses authoritative session
+PASS Count requires explicit touched/confirmed zero
+PASS blind count uses pending reason sentinel until server reveals variance
+PASS variance reason follow-up exists
+PASS approval cannot bypass final reason
+PASS Phase 6 migration does not mutate stock balances
+PASS scanner resolves authoritative document lines
+PASS production scanner simulation cannot appear in production success path
+PASS Home has no hard coded last synced clock
+PASS Sync Center all-synced requires zero active commands
+PASS Sync Center uses real persisted freshness
+PASS Sync Center no longer fabricates server quantity/revision/user
+PASS conflict keep-server action preserves audit state
+PASS Receive fixture document source removed
+PASS Dispatch fixture document source removed
+PASS Count fixture document source removed
+PASS Phase 6 preflight exists
+PASS Phase 6 DB tests exist
+PASS Phase 6 pgTAP plan matches assertions - 7 planned / 7 found
+
+Phase 6 static offline/outbox/workflow checks passed.
+
+> figma-make-app@1.0.0 phase7:verify
+> node scripts/phase7_verify.mjs
+
+PASS normalized tenant SKU uniqueness
+PASS production barcode/identifier table
+PASS identifier namespace collision guards
+PASS exact server identifier resolver
+PASS transactional resolver uses actionable document lines
+PASS duplicate line/bin ambiguity returned
+PASS durable unknown scan table
+PASS unknown scan outbox command
+PASS camera acquisition uses getUserMedia
+PASS browser barcode detector adapter
+PASS hardware keyboard-wedge adapter
+PASS duplicate scan state reachable
+PASS scanner lifecycle handles denied/unsupported
+PASS scanner stops camera on background
+PASS manual transactional resolution is exact server resolution
+PASS ambiguity UI requires line/bin selection
+PASS unknown report carries document context
+PASS query item barcode no longer aliases SKU
+PASS receive same-quantity exceptions reachable
+PASS unresolved receive condition exceptions block final queue
+PASS dispatch review gated until lines accounted
+PASS count reason has no default preselection
+PASS recount clears stale observation/reason draft state
+PASS Phase 7 migration does not mutate stock
+PASS Phase 7 preflight exists
+PASS Phase 7 DB tests exist
+PASS Phase 7 pgTAP plan matches assertions - 14 planned / 14 found
+
+Phase 7 static scanner/identifier/workflow checks passed.
+
+> figma-make-app@1.0.0 phase8:verify
+> node scripts/phase8_verify.mjs
+
+PASS Phase 8 enum migration exists
+PASS Phase 8 production-hardening migration exists
+PASS receipt disposition enum exists
+PASS receipt disposition table exists
+PASS receipt disposition is immutable per transfer line
+PASS receipt disposition command is authoritative and idempotent
+PASS receipt disposition requires explicit reason
+PASS damaged receipt posts to damaged status
+PASS wrong and unexpected receipt never silently become available
+PASS receipt finalization requires disposition for condition exception
+PASS receipt disposition is marked applied only with final command
+PASS warehouse work does not count unresolved receipt exception as done
+PASS receipt UI separates capture-terminal from business-resolved
+PASS receipt UI queues explicit disposition successor command
+PASS legacy generic JSON inventory posting is revoked
+PASS legacy adjustment outbox kind removed
+PASS canonical operation transaction identity is UUID shaped
+PASS operation identity and server fingerprint are immutable
+PASS durable command ledgers replace inventory_operations failure semantics
+PASS cross-table reservation integrity is deferred
+PASS reservation remainder cannot exceed non-negative available physical
+PASS backend reachability uses active Supabase probe
+PASS navigator.onLine is only a hint and not reachability authority
+PASS sync processing requires successful backend probe
+PASS durable storage has structured health and retry
+PASS storage failure fails sync closed
+PASS storage recovery is periodically retried
+PASS global UI surfaces durable storage failure
+PASS PWA manifest is linked
+PASS service worker app shell exists
+PASS service worker warms current same-origin build resources
+PASS cold offline auth context is cached per authenticated user
+PASS offline snapshots are chosen before slow RPC timeout when backend unreachable
+PASS inventory list/item/bin/movement snapshots persist for cold offline use
+PASS remote product images removed from production data path
+PASS remote Google font dependency removed
+PASS catalog reads paginate beyond API max rows
+PASS identifier reads batch large product sets
+PASS conflict keep-local creates new stable successor identity
+PASS conflict keep-local preserves old command as cancelled audit history
+PASS conflict successor updates durable workflow command references
+PASS Sync Center exposes explicit keep-local rebase action
+PASS local assets exist for product/avatar/icon
+PASS Phase 8 migration does not weaken direct ledger write revocations
+PASS Phase 8 preflight exists
+PASS Phase 8 DB tests exist
+PASS Phase 8 pgTAP plan matches authored assertions - 19 planned / 19 found
+
+Phase 8 static production-hardening checks passed.
+
+> figma-make-app@1.0.0 phase9:verify
+> node scripts/phase9_verify.mjs
+
+PASS stock-precondition ledger exists
+PASS stock-precondition ledger is not app writable
+PASS physical balance mutation takes position lock
+PASS reservation mutation takes position lock
+PASS trigger return handles DELETE explicitly
+PASS server exposes authoritative stock snapshot
+PASS server validates exact required position set
+PASS server returns typed stale-stock conflict
+PASS stock preconditions are immutable per command id
+PASS dispatch final command is revision protected
+PASS receipt final command is revision protected
+PASS transfer ship final command is revision protected
+PASS count finalization is revision protected
+PASS legacy final stock RPCs are revoked from app role
+PASS new v2 stock RPCs are authenticated entry points
+PASS client document model carries stock preconditions
+PASS document fetch obtains authoritative stock snapshot
+PASS client uses v2 final stock RPCs
+PASS outbox final commands require valid stock preconditions
+PASS conflict rebase refreshes authoritative stock snapshot
+PASS dispatch queues snapshot captured with business command
+PASS receive queues snapshot captured with business command
+PASS count queues snapshot captured with business command
+PASS Phase 9 preflight exists
+PASS Phase 9 DB tests exist
+PASS Phase 9 DB runner executes cumulative Phase 1-9 suite
+PASS database CI points at final Phase 9 suite
+PASS Phase 9 pgTAP plan matches authored assertions - 16 planned / 16 found
+
+Phase 9 stock-revision precondition checks passed.
+
+> figma-make-app@1.0.0 phase10:verify
+> node scripts/phase10_verify.mjs && node scripts/phase10_architecture_gap_audit.mjs
+
+PASS Phase 10 architecture audit script exists
+PASS Phase 10 release candidate runner exists
+PASS Phase 10 concurrent dispatch proof exists
+PASS Phase 10 deterministic failure injection proof exists
+PASS Phase 10 killed-client rollback proof exists
+PASS Phase 10 browser outbox proof exists
+PASS Phase 10 duplicate-bin DB proof exists
+PASS Phase 10 duplicate-bin browser proof exists
+PASS Phase 10 reconciliation SQL exists
+PASS Phase 10 CI workflow exists
+PASS Phase 10 npm verify script registered
+PASS Phase 10 release script registered
+PASS shell syntax scripts/phase10_release_candidate.sh
+PASS shell syntax scripts/phase10_db_setup.sh
+PASS shell syntax scripts/phase10_concurrent_dispatch.sh
+PASS shell syntax scripts/phase10_failure_injection.sh
+PASS shell syntax scripts/phase10_killed_client_rollback.sh
+PASS shell syntax scripts/phase10_duplicate_bin_db.sh
+PASS shell syntax scripts/phase10_browser_test.sh
+PASS shell syntax scripts/phase10_reconcile.sh
+PASS python syntax scripts/phase10_browser_outbox_runtime.py
+PASS python syntax scripts/phase10_browser_duplicate_bin.py
+
+Phase 10 release-runner preparation checks passed.
+PASS canonical matrix still has 186 rows - 186
+PASS all runtime proofs are verified and all findings are closed
+PASS client does not call retired generic post_inventory_operation
+PASS client does not directly write inventory_balances
+PASS client does not directly write inventory_movements
+PASS client does not directly write inventory_operations
+PASS production screens do not import legacy data.ts fixture exports
+PASS required Phase 10 asset scripts/phase10_runtime_setup.sql
+PASS required Phase 10 asset scripts/phase10_concurrent_dispatch.sh
+PASS required Phase 10 asset scripts/phase10_failure_injection.sh
+PASS required Phase 10 asset scripts/phase10_killed_client_rollback.sh
+PASS required Phase 10 asset scripts/phase10_browser_outbox_runtime.py
+PASS required Phase 10 asset scripts/phase10_browser_duplicate_bin.py
+PASS required Phase 10 asset scripts/phase10_duplicate_bin_db.sh
+PASS required Phase 10 asset scripts/phase10_release_candidate.sh
+PASS required Phase 10 asset scripts/phase10_release_reconciliation.sql
+PASS required Phase 10 asset docs/remediation/PHASE10_HARNESS_AUDIT.md
+PASS required Phase 10 asset docs/remediation/PHASE10_MIGRATION_CHECKLIST.md
+PASS required Phase 10 asset docs/remediation/PHASE10_RECONCILIATION_CHECKLIST.md
+PASS required Phase 10 asset docs/remediation/PHASE10_RELEASE_CHECKLIST.md
+PASS required Phase 10 asset .github/workflows/phase10-release-candidate.yml
+PASS F-147 harness asserts one accepted and one revision conflict
+PASS F-149 harness covers deterministic second-line rollback
+PASS F-149 harness covers killed client plus same-id retry
+PASS F-153 harness uses four contexts and exact-once RPC assertion
+PASS F-154 harness closes and reopens persistent profile
+PASS F-157 browser harness uses actual app exact-manual flow and both bins
+
+Phase 10 architecture gap audit passed: no untracked architectural finding is present outside the five explicit runtime-proof gates.
+
+> figma-make-app@1.0.0 syntax:check
+> node scripts/ts_syntax_check.mjs
+
+PASS TypeScript/TSX syntax transpile - 35 files

@@ -1,0 +1,37 @@
+NOTICE:  truncate cascades to table "inventory_movements"
+NOTICE:  truncate cascades to table "inventory_transfer_receipt_dispositions"
+NOTICE:  truncate cascades to table "inventory_ledger_commands"
+BEGIN
+psql:scripts/phase10_runtime_setup.sql:4: NOTICE:  schema "phase10_test" already exists, skipping
+CREATE SCHEMA
+psql:scripts/phase10_runtime_setup.sql:10: NOTICE:  relation "snapshots" already exists, skipping
+CREATE TABLE
+TRUNCATE TABLE
+GRANT
+GRANT
+INSERT 0 0
+INSERT 0 0
+INSERT 0 1
+INSERT 0 3
+INSERT 0 9
+INSERT 0 6
+INSERT 0 6
+INSERT 0 0
+INSERT 0 0
+              set_config              
+--------------------------------------
+ f1000000-0000-4000-8000-000000000099
+(1 row)
+
+  set_config   
+---------------
+ authenticated
+(1 row)
+
+INSERT 0 4
+COMMIT
+Running F-147: Concurrent dispatch...
+Accepted: 1
+Conflicts: 1
+Post: {'onHand': 3.0, 'openOrders': 1, 'saleMovements': 1, 'completedOrders': 1}
+PASS F-147 true parallel PostgreSQL dispatch: exactly one command committed; the stale competitor conflicted; stock and ledger changed once

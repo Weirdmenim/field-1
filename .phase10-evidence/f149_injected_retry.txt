@@ -1,0 +1,3 @@
+f1000000-0000-4000-8000-000000000099
+authenticated
+{"lines": [{"line_id": "f1200000-0000-4000-8000-000000000011", "movement_id": "fdc629bc-e5d9-43b7-a291-54e0f0ef5a63", "dispatched_base_quantity": 2.000000, "backordered_base_quantity": 0.000000}, {"line_id": "f1200000-0000-4000-8000-000000000012", "movement_id": "8fd7c460-fdb3-4a11-b023-0a01e396556b", "dispatched_base_quantity": 2.000000, "backordered_base_quantity": 0.000000}], "outcome": "accepted", "success": true, "document_id": "f1200000-0000-4000-8000-000000000001", "operation_id": "9415afa3-76e3-47b3-87b0-9b76e6e22885", "document_status": "COMPLETED", "client_command_id": "f1490000-0000-4000-8000-000000000001", "document_revision": 2, "server_command_id": "17611e12-a774-40a5-894a-c65f4835e09a"}

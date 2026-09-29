@@ -1,0 +1,107 @@
+
+> figma-make-app@1.0.0 context:verify
+> node scripts/project_context_verify.mjs
+
+PASS context file docs/project/PROJECT_STATE.json
+PASS context file docs/project/CONTEXT_SYSTEM.md
+PASS context file docs/project/INVARIANTS.md
+PASS context file docs/project/DECISION_LOG.md
+PASS context file docs/project/PHASE_JOURNAL.md
+PASS context file docs/project/VERIFICATION_LEDGER.md
+PASS context file docs/project/NEXT_PHASE_CONTRACT.md
+PASS context file docs/remediation/REMEDIATION_MATRIX.csv
+PASS state context file docs/project/INVARIANTS.md
+PASS state context file docs/project/DECISION_LOG.md
+PASS state context file docs/project/PHASE_JOURNAL.md
+PASS state context file docs/project/VERIFICATION_LEDGER.md
+PASS state context file docs/project/NEXT_PHASE_CONTRACT.md
+PASS state context file docs/remediation/REMEDIATION_MATRIX.csv
+PASS state context file docs/remediation/PHASE7_SCANNING_IDENTIFIERS.md
+PASS state context file docs/remediation/PHASE7_HANDOFF.md
+PASS state context file docs/remediation/PHASE7_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE8_PRODUCTION_HARDENING.md
+PASS state context file docs/remediation/PHASE8_HANDOFF.md
+PASS state context file docs/remediation/PHASE8_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE9_STOCK_REVISION_PRECONDITIONS.md
+PASS state context file docs/remediation/PHASE9_HANDOFF.md
+PASS state context file docs/remediation/PHASE9_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE10_PREPARATION.md
+PASS state context file docs/remediation/PHASE10_HARNESS_AUDIT.md
+PASS state context file docs/remediation/PHASE10_HANDOFF.md
+PASS state context file docs/remediation/PHASE10_TEST_STATUS.md
+PASS state context file docs/remediation/PHASE10_MIGRATION_CHECKLIST.md
+PASS state context file docs/remediation/PHASE10_RECONCILIATION_CHECKLIST.md
+PASS state context file docs/remediation/PHASE10_RELEASE_CHECKLIST.md
+PASS state context file docs/remediation/PHASE10_RUNNER.md
+PASS canonical finding count remains 186
+PASS current phase is recorded
+PASS entry head recorded
+PASS implementation commit recorded
+PASS latest frozen phase is not ahead of current phase
+PASS matrix still contains 186 findings - 186 rows
+PASS project-state matrix counts sum to 186 - 186
+PASS Phase 1 trust boundary persisted
+PASS Phase 2 ATP invariant persisted
+PASS unsafe generic COUNT remains fail closed
+PASS Phase 3 authoritative-document invariant persisted
+PASS Phase 3 no-stock-write invariant persisted
+PASS Phase 3 handoff exists
+PASS Phase 4 stable command identity invariant persisted
+PASS Phase 4 authoritative delta invariant persisted
+PASS Phase 4 generic document posting remains disabled
+PASS Phase 4 handoff exists
+PASS Phase 4 migration exists
+PASS Phase 5 append-only ledger invariant persisted
+PASS Phase 5 document-linked reversal fail-closed invariant persisted
+PASS Phase 5 handoff exists
+PASS Phase 5 migration exists
+PASS Phase 5 admin repair runbook exists
+PASS Phase 6 record-per-command outbox invariant persisted
+PASS Phase 6 owner quarantine invariant persisted
+PASS Phase 6 stable local command identity invariant persisted
+PASS Phase 6 cross-context coordination invariant persisted
+PASS Phase 6 authoritative workflow cutover invariant persisted
+PASS Phase 6 handoff exists
+PASS Phase 6 migration exists
+PASS Phase 6 offline-store implementation exists
+PASS Phase 7 exact transactional identifier invariant persisted
+PASS Phase 7 identifier namespace invariant persisted
+PASS Phase 7 scanner input-only invariant persisted
+PASS Phase 7 durable unknown-scan invariant persisted
+PASS Phase 7 unresolved receipt exception invariant persisted
+PASS Phase 7 handoff exists
+PASS Phase 7 migration exists
+PASS Phase 7 scanner implementation exists
+PASS Phase 8 active reachability invariant persisted
+PASS Phase 8 durable storage invariant persisted
+PASS Phase 8 cold-offline identity invariant persisted
+PASS Phase 8 receipt disposition invariant persisted
+PASS Phase 8 legacy generic posting remains retired
+PASS Phase 8 handoff exists
+PASS Phase 8 production-hardening migration exists
+PASS Phase 8 service worker exists
+PASS Phase 9 explicit stock revision invariant persisted
+PASS Phase 9 immutable precondition identity invariant persisted
+PASS Phase 9 shared position-lock invariant persisted
+PASS Phase 9 stale stock conflict invariant persisted
+PASS Phase 9 handoff exists
+PASS Phase 9 migration exists
+PASS Phase 10 runtime evidence discipline persisted
+PASS Phase 10 all-or-nothing release gate invariant persisted
+PASS Phase 10 browser proof authority invariant persisted
+PASS Phase 10 handoff exists
+PASS Phase 10 runner exists
+PASS Phase 10 CI workflow exists
+PASS baseline tag retained
+PASS phase tag retained phase1-authz-implemented
+PASS phase tag retained phase2-inventory-model-implemented
+PASS phase tag retained phase3-authoritative-documents-implemented
+PASS phase tag retained phase4-atomic-document-commands-implemented
+PASS phase tag retained phase5-ledger-reversals-implemented
+PASS phase tag retained phase6-offline-sync-implemented
+PASS phase tag retained phase7-scanning-identifiers-implemented
+PASS phase tag retained phase8-production-hardening-implemented
+PASS phase tag retained phase9-final-verification-implemented
+PASS phase tag retained phase10-release-runner-prepared
+
+Project context continuity checks passed.
