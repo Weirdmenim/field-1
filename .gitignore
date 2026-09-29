@@ -1,0 +1,15 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Phase 11 runtime evidence is generated locally and sealed separately.
+.phase11-evidence/
+.phase11-evidence.previous.*/
+
+# Supabase local runtime state
+supabase/.temp/
+
+# Local/editor noise
+.DS_Store
+Thumbs.db
+*.local

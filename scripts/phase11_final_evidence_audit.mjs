@@ -32,6 +32,14 @@ let provenance = {}
 try { provenance = json('provenance', 'run.json') } catch { failures.push('provenance JSON parse') }
 pass('source commit is a 40-character Git SHA', /^[0-9a-f]{40}$/.test(provenance.source_commit || ''))
 pass('worktree was clean at test start', provenance.dirty_worktree_at_start === false)
+try {
+  const currentCommit = execFileSync('git', ['rev-parse', 'HEAD'], { cwd: ROOT, encoding: 'utf8' }).trim()
+  const dirtyNow = execFileSync('git', ['status', '--porcelain'], { cwd: ROOT, encoding: 'utf8' }).trim()
+  pass('source commit remained unchanged during the gate', currentCommit === provenance.source_commit, currentCommit)
+  pass('worktree is still clean at seal time', dirtyNow === '', dirtyNow || 'clean')
+} catch (error) {
+  pass('Git provenance remains readable at seal time', false, String(error?.message || error))
+}
 for (const f of ['npm-ci.log','phase11-verify.log','phase10-evidence-audit.log','typecheck.log','build.log','db-reset.log','runtime-setup.log','raw-runner.log']) {
   pass(`provenance evidence ${f}`, exists('provenance', f))
 }

@@ -1,4 +1,5 @@
 import fs from 'node:fs'
+import { execFileSync } from 'node:child_process'
 const failures=[]
 const pass=(name,condition,detail='')=>{if(condition)console.log(`PASS ${name}${detail?` - ${detail}`:''}`);else{console.error(`FAIL ${name}${detail?` - ${detail}`:''}`);failures.push(name)}}
 const must=[
@@ -31,6 +32,16 @@ pass('offline stress targets production OutboxV2 schema',stress.includes("'Field
 const vite=fs.readFileSync('vite.config.ts','utf8')
 pass('clean checkout does not require generated Figma metadata',!vite.includes("from './.figma/make/site.json'")&&vite.includes('loadOptionalFigmaSiteConfiguration'))
 pass('Vite config uses ESM-safe project root',vite.includes('fileURLToPath(import.meta.url)')&&!vite.includes('__dirname'))
+const gitignore=fs.existsSync('.gitignore')?fs.readFileSync('.gitignore','utf8'):''
+pass('repository ignores node_modules',/(^|\n)node_modules\/(\n|$)/.test(gitignore))
+pass('repository ignores dist output',/(^|\n)dist\/(\n|$)/.test(gitignore))
+pass('repository ignores generated Phase 11 evidence',gitignore.includes('.phase11-evidence/'))
+if(fs.existsSync('.git')){
+  const trackedNodeModules=execFileSync('git',['ls-files','node_modules'],{encoding:'utf8'}).trim()
+  const trackedDist=execFileSync('git',['ls-files','dist'],{encoding:'utf8'}).trim()
+  pass('node_modules is not tracked by Git',trackedNodeModules==='')
+  pass('dist is not tracked by Git',trackedDist==='')
+}
 const manifest=fs.readFileSync('docs/phase11/PHASE11_RELEASE_MANIFEST.md','utf8')
 pass('documentation does not claim Phase 11 already passed',manifest.includes('PENDING EXECUTION')&&!manifest.includes('officially sealed'))
 if(failures.length){console.error(`\n${failures.length} Phase 11 verification check(s) failed.`);process.exit(1)}

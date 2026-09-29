@@ -38,13 +38,29 @@ async def select_warehouse(page, warehouse_id):
         await summary.first.click()
     select = page.get_by_label('Active warehouse')
     await select.select_option(warehouse_id)
-    await page.wait_for_timeout(600)
+    # Do not race the warehouse-scoped React Query. First prove the UI context
+    # actually accepted the requested warehouse, then allow the query to settle.
+    for _ in range(30):
+        if await select.input_value() == warehouse_id:
+            break
+        await page.wait_for_timeout(100)
+    if await select.input_value() != warehouse_id:
+        raise RuntimeError(f'warehouse selection did not switch to {warehouse_id}')
+    await page.wait_for_timeout(800)
     if await summary.count():
         await summary.first.click()
 
 async def open_work(page):
     await page.get_by_role('button', name='Work').click()
     await page.get_by_text('My Work').wait_for(timeout=10000)
+
+async def click_work_task(page, ref):
+    # TaskRow renders the reference as part of the button accessible name
+    # (for example, "Receive TR-00291"), not as a standalone text node.
+    # Match the actual interactive task row by role + contained reference.
+    task = page.get_by_role('button').filter(has_text=ref).first
+    await task.wait_for(state='visible', timeout=30000)
+    await task.click()
 
 async def run_flow(name, func, browser):
     log_file = EVIDENCE / f'{name}.log'
@@ -85,7 +101,7 @@ async def receive_flow(page, ctx):
     await authenticate(page)
     await select_warehouse(page, DOWNTOWN)
     await open_work(page)
-    await page.get_by_text('TR-00291', exact=True).click()
+    await click_work_task(page, 'TR-00291')
     await page.get_by_role('button', name='Scan to receive').wait_for(timeout=10000)
     await page.get_by_role('button', name='Scan to receive').click()
     await page.get_by_role('button', name='Manual').click()
@@ -101,7 +117,7 @@ async def dispatch_flow(page, ctx):
     await authenticate(page)
     await select_warehouse(page, CENTRAL)
     await open_work(page)
-    await page.get_by_text('SO-18420', exact=True).click()
+    await click_work_task(page, 'SO-18420')
     await page.get_by_text('MIRO-LAP-14', exact=False).first.click()
     await page.get_by_role('button', name='Save pick').click()
     await page.get_by_text('Saved', exact=True).first.wait_for(timeout=10000)
@@ -110,7 +126,7 @@ async def count_flow(page, ctx):
     await authenticate(page)
     await select_warehouse(page, CENTRAL)
     await open_work(page)
-    await page.get_by_text('CC-0093', exact=True).click()
+    await click_work_task(page, 'CC-0093')
     await page.get_by_role('button', name='Continue counting').click()
     qty = page.locator('input[inputmode="decimal"]').first
     await qty.fill('10')
