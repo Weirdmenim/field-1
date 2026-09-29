@@ -1,0 +1,30 @@
+
+> figma-make-app@1.0.0 phase11:verify
+> node scripts/phase11_verify.mjs
+
+PASS Phase 11 asset docs/project/MASTER_PRODUCT_BUILD_CONTEXT.md
+PASS Phase 11 asset docs/phase11/PHASE11_CHARTER.md
+PASS Phase 11 asset docs/phase11/PHASE11_IMPLEMENTATION_PLAN.md
+PASS Phase 11 asset docs/phase11/PHASE11_TEST_EVIDENCE_PLAN.md
+PASS Phase 11 asset docs/phase11/PHASE11_RISK_REGISTER.md
+PASS Phase 11 asset docs/phase11/PHASE11_ENTRY_AUDIT.md
+PASS Phase 11 asset scripts/phase11_evidence_audit.mjs
+PASS Phase 11 asset scripts/phase11_final_evidence_audit.mjs
+PASS Phase 11 asset scripts/phase11_release_candidate.sh
+PASS Phase 11 asset scripts/phase11_runner.sh
+PASS Phase 11 asset scripts/phase11_security_baseline.sh
+PASS Phase 11 remains current until real evidence seals it
+PASS Phase 11 program baseline remains unsealed before execution
+PASS Phase 12 remains only the next phase
+PASS raw Phase 11 runner is fail-closed
+PASS raw Phase 11 runner cannot mint pass marker
+PASS legacy Python runner is safe delegate
+PASS legacy test-all runner is safe delegate
+PASS only independent auditor mints final marker
+PASS release candidate requires clean Git provenance
+PASS release candidate runs independent final auditor
+PASS backup proof targets real public inventory_balances
+PASS offline stress targets production OutboxV2 schema
+PASS documentation does not claim Phase 11 already passed
+
+PASS Phase 11 hardened-candidate static verification.

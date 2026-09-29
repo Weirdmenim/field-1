@@ -1,0 +1,9 @@
+{
+  "source_commit": "3ee21701631b344575ce4ef0310e387bcae71e91",
+  "dirty_worktree_at_start": false,
+  "started_at": "2026-09-29T11:01:19Z",
+  "node": "v22.22.3",
+  "npm": "10.9.8",
+  "python": "Python 3.10.1",
+  "psql": "psql (PostgreSQL) 17.5"
+}

@@ -1,0 +1,5 @@
+
+> figma-make-app@1.0.0 typecheck
+> tsc --noEmit
+
+vite.config.ts(6,31): error TS2307: Cannot find module './.figma/make/site.json' or its corresponding type declarations.

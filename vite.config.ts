@@ -1,9 +1,14 @@
 import { defineConfig, type HtmlTagDescriptor, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 
-import siteConfiguration from './.figma/make/site.json'
+const projectRoot = path.dirname(fileURLToPath(import.meta.url))
+const siteConfiguration = loadOptionalFigmaSiteConfiguration(
+  path.join(projectRoot, '.figma', 'make', 'site.json'),
+)
 
 // Vite config — https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -26,7 +31,7 @@ export default defineConfig(({ mode }) => {
     ],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'),
+        '@': path.resolve(projectRoot, './src'),
       },
     },
     server: {
@@ -45,6 +50,18 @@ export default defineConfig(({ mode }) => {
     },
   }
 })
+
+function loadOptionalFigmaSiteConfiguration(filePath: string): FigmaSiteConfiguration {
+  if (!fs.existsSync(filePath)) return {}
+
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8')) as FigmaSiteConfiguration
+  } catch (error) {
+    throw new Error(
+      `Invalid optional Figma site configuration at ${filePath}: ${error instanceof Error ? error.message : String(error)}`,
+    )
+  }
+}
 
 type FigmaSiteConfiguration = {
   title?: string

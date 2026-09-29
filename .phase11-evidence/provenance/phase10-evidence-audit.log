@@ -1,0 +1,48 @@
+
+> figma-make-app@1.0.0 phase11:evidence-audit
+> node scripts/phase11_evidence_audit.mjs
+
+Auditing Phase 10 evidence: .phase10-evidence
+PASS evidence file release.log
+PASS evidence file runtime-versions.txt
+PASS evidence file npm-ci.log
+PASS evidence file context-verify.log
+PASS evidence file cumulative-verify.log
+PASS evidence file phase10-verify.log
+PASS evidence file typecheck.log
+PASS evidence file build.log
+PASS evidence file db-reset.log
+PASS evidence file cumulative-pgtap.log
+PASS evidence file runtime-setup.log
+PASS evidence file f147.log
+PASS evidence file f149-injection.log
+PASS evidence file f149-killed-client.log
+PASS evidence file f157-db.log
+PASS evidence file browser-runtime.log
+PASS evidence file browser-duplicate-bin.log
+PASS evidence file reconciliation-before-browser.log
+PASS evidence file reconciliation-after-browser.log
+PASS evidence file RELEASE_GATE_PASSED.txt
+PASS release log has terminal PASS
+PASS cumulative pgTAP reports PASS
+PASS F-147 concurrency proof passed
+PASS F-149 injected-failure proof passed
+PASS F-149 killed-client rollback proof passed
+PASS F-149 post-crash retry proof passed
+PASS F-153 browser concurrency proof passed
+PASS F-154 restart proof passed
+PASS F-157 DB ambiguity proof passed
+PASS F-157 browser workflow proof passed
+PASS post-browser reconciliation executed
+PASS F-157 browser log has no Traceback \(most recent call last\)
+PASS F-157 browser log has no TimeoutError:
+PASS F-157 browser log has no AssertionError:
+PASS release marker contains F-147=PASS
+PASS release marker contains F-149=PASS
+PASS release marker contains F-153=PASS
+PASS release marker contains F-154=PASS
+PASS release marker contains F-157=PASS
+PASS release run started from clean worktree
+PASS release marker commit matches release log commit - 5122f14f16377e802e7cd1a17919ae23ebbabd46
+
+PASS Phase 11 evidence audit: Phase 10 release evidence is complete, internally consistent, and sealable.

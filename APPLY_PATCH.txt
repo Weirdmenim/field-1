@@ -1,0 +1,13 @@
+FieldOne Phase 11 v4 clean-checkout patch
+
+Files to replace in your existing repository:
+- vite.config.ts
+- scripts/phase11_verify.mjs
+
+Then run:
+  git add vite.config.ts scripts/phase11_verify.mjs
+  git commit -m "fix: make Vite config independent of Figma generated metadata"
+  git push
+  npm run phase11:release-candidate
+
+Do not create .figma/make/site.json manually. The config now treats it as optional.
