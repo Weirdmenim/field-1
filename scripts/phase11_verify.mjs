@@ -25,6 +25,13 @@ pass('only independent auditor mints final marker',audit.includes('PHASE11_GATE_
 const release=fs.readFileSync('scripts/phase11_release_candidate.sh','utf8')
 pass('release candidate requires clean Git provenance',release.includes('Git worktree must be clean')&&release.includes('git rev-parse HEAD'))
 pass('release candidate runs independent final auditor',release.includes('phase11_final_evidence_audit.mjs'))
+
+const e2e=fs.readFileSync('scripts/phase11_e2e_runner.py','utf8')
+pass('receive E2E proves authoritative receipt queue and confirmation',e2e.includes('Ready to queue authoritative receipt')&&e2e.includes("name='Queue receipt'")&&e2e.includes('sync_current_commands(page)'))
+pass('dispatch E2E captures the complete seeded order before final queue',e2e.includes('for _ in range(2)')&&e2e.includes("name='Save pick'")&&e2e.includes('Ready to queue authoritative dispatch'))
+pass('count E2E confirms queued observation through Sync Center',e2e.includes('Observations queued')&&e2e.includes('sync_current_commands(page)'))
+pass('E2E failure evidence captures visible UI text',e2e.includes('Visible UI at failure'))
+
 const backup=fs.readFileSync('scripts/phase11_backup_restore.sh','utf8')
 pass('backup proof targets real public inventory_balances',backup.includes('public.inventory_balances')&&!backup.includes('phase10_test.inventory_balances'))
 const stress=fs.readFileSync('scripts/phase11_offline_stress_test.py','utf8')
